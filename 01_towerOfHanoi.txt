@@ -1,0 +1,26 @@
+//program to solve tower of hanoi problem
+#include<iostream>
+using namespace std;
+
+//function to solve problem
+void towerOfHanoi(int n,char A,char B, char C)
+{
+    if(n==0)
+     return;
+   
+    else{
+    //for moving n-1 disks from A to B using C
+    towerOfHanoi(n-1,A,C,B);
+    
+    //for moving One remaining disk from A to C
+    cout<<"Move a disk from A to C"<<endl;
+    
+    //for moving n-1 Disks from B to using A 
+    towerOfHanoi(n-1,B,A,C);
+    }
+ }
+ 
+int main()
+{
+     towerOfHanoi(3,'A','B','C');
+}
